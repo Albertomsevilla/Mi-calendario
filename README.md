@@ -2,7 +2,7 @@
 
 > Panel de organización personal para estudiantes: une **Google Calendar**, **Canvas** y el **Excel de seguimiento del profesor** en una sola página, con un asistente de IA integrado.
 
-![Vista mensual de Mi calendario](img/vista-mes.png)
+![Vista mensual de Mi calendario](img/vista-mes.webp)
 
 Proyecto propio desarrollado durante **1º de DAW** (Desarrollo de Aplicaciones Web).
 
@@ -96,11 +96,11 @@ Al empezar el curso, la información que necesitaba para organizarme estaba repa
 
 | Vista mensual                       | Mi día                    |
 | ----------------------------------- | ------------------------- |
-| ![Vista mensual](img/vista-mes.png) | ![Mi día](img/mi-dia.png) |
+| ![Vista mensual](img/vista-mes.webp) | ![Mi día](img/mi-dia.webp) |
 
 | Festivos y vacaciones | Asistente con IA |
 |-----------------------|------------------|
-| ![Festivos y vacaciones](img/festivos-vacaciones.png) | ![Asistente](img/asistente.png) |
+| ![Festivos y vacaciones](img/festivos-vacaciones.webp) | ![Asistente](img/asistente.webp) |
 
 ---
 

@@ -1099,6 +1099,18 @@ function calTools(){
        return out.slice(0,25)}}
   ];
 }
+function habTools(){
+  function hk(n){var s=String(n||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+    if(/deport|gym|gimnas|ejerc|entren/.test(s))return "deporte";if(/ingl|english/.test(s))return "ingles";if(/program|\bia\b|codigo/.test(s))return "programar";return null}
+  return [
+    {name:"listar_habitos",description:"Devuelve los hábitos (deporte, inglés, programar/IA) con si están hechos hoy, la racha y los días hechos en los últimos 7.",
+     execute:function(){return HAB.map(function(h){return {habit:h[1],today:habDone(h[0],ymd(new Date())),streak:habStreak(h[0]),last7:habWeek(h[0])}})}},
+    {name:"marcar_habito",description:"Marca o desmarca un hábito (deporte, inglés, programar) en un día (por defecto hoy, formato 'AAAA-MM-DD').",
+     inputSchema:{type:"object",properties:{habit:{type:"string"},done:{type:"boolean"},date:{type:"string"}},required:["habit","done"]},
+     execute:function(i){var k=hk(i.habit);if(!k)throw new Error("hábito desconocido: deporte, inglés o programar");
+       var d=/^\d{4}-\d\d-\d\d$/.test(String(i.date||""))?String(i.date):ymd(new Date());setHab(k,d,!!i.done);return {ok:true,date:d}}}
+  ];
+}
 $("askForm").addEventListener("submit",function(e){e.preventDefault();var q=$("askQ").value.trim();if(!q||!sample)return;$("askQ").value="";runAsk(q,"")});
 async function runAsk(q,extra){
   if(!sample||$("askGo").disabled)return;
@@ -1132,7 +1144,7 @@ $("weekBtn").addEventListener("click",async function(){
     var hs=HAB.map(function(h){return h[1]+": "+habWeek(h[0])+"/7, racha "+habStreak(h[0])}).join("; ");
     var ups=(st.up||[]).map(function(e){return "- "+evLine(e)}).join("\n");
     $("askGo").disabled=false;
-    runAsk("Hazme la revisión semanal de la semana que viene ("+ymd(a)+" a "+ymd(addD(a,6))+"): 1) lo importante (entregas, tests), 2) buenos huecos para estudiar, 3) qué pendientes meter. Breve y en puntos.","\n\nEventos de esa semana:\n"+lines+"\n\nEntregas y tests próximos:\n"+(ups||"(ninguno)")+"");
+    runAsk("Hazme la revisión semanal de la semana que viene ("+ymd(a)+" a "+ymd(addD(a,6))+"): 1) lo importante (entregas, tests), 2) buenos huecos para estudiar y hacer deporte, 3) qué pendientes meter. Breve y en puntos.","\n\nEventos de esa semana:\n"+lines+"\n\nEntregas y tests próximos:\n"+(ups||"(ninguno)")+"");
   }catch(e){$("askGo").disabled=false;$("ans").textContent=errMsg(e)}
 });
 $("askQ").addEventListener("keydown",function(e){
