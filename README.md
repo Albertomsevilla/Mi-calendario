@@ -2,6 +2,8 @@
 
 > Panel de organización personal para estudiantes: une **Google Calendar**, **Canvas** y el **Excel de seguimiento del profesor** en una sola página, con un asistente de IA integrado.
 
+**[▶ Probar la demo](https://albertomsevilla.github.io/Mi-calendario/)** · funciona en el navegador con datos de ejemplo, sin instalar nada ni iniciar sesión.
+
 ![Vista mensual de Mi calendario](img/vista-mes.png)
 
 Proyecto propio desarrollado durante **1º de DAW** (Desarrollo de Aplicaciones Web).
