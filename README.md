@@ -184,7 +184,7 @@ Aprender a trabajar con IA de forma eficaz (explicar bien lo que quiero, revisar
 
 ## Próximos pasos
 
-- [ ] Versión **demo** con datos de ejemplo para que cualquiera pueda probarla
+- [x] Versión **demo** con datos de ejemplo para que cualquiera pueda probarla
 - [ ] Exportar las entregas a PDF
 - [ ] Notificaciones en el navegador antes de cada entrega
 - [ ] Estadísticas de entregas a tiempo por asignatura
